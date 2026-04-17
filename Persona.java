@@ -67,6 +67,9 @@ public class Persona {
         return dni;}
 
     public String getRol() {
+        if (isDocente) {
+            System.out.println("Es Docente");
+        }
         return rol;
     }
 
