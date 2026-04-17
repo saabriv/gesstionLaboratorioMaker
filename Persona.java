@@ -65,6 +65,9 @@ public class Persona {
             System.out.println("Perfil invalido.");
             return false;
         }
+        else{
+            return false;
+        }
     }
 
     //Getters: mostramos los valores que establecimos previamente
