@@ -54,6 +54,12 @@ public class Persona {
     public boolean setRol(String rol) {
         if (rol.equals("docente") || rol.equals("estudiante")){
             this.rol = rol;
+            isDocente = true;
+            return true;
+
+        } else if (rol.equals("estudiante")){
+            this.rol = rol;
+            isDocente = false;
             return true;
         } else {
             System.out.println("Perfil invalido.");
