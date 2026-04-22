@@ -1,3 +1,5 @@
+package ImplementarPilares.gesstionLaboratorioMaker;
+import java.lang.classfile.instruction.SwitchCase;
 import java.util.Scanner;
 
 public class Persona {
@@ -6,6 +8,11 @@ public class Persona {
     private String nombre;
     private String correo;
     private String rol;
+    public boolean isDocente;
+    public static double tiempoEstimado;
+    public static int alturaCapa, totalCapas;
+
+
 
     //Constructor
 
@@ -17,6 +24,27 @@ public class Persona {
         System.out.println("Ingresar nombre del archivo: ");
         Scanner teclado = new Scanner(System.in);
         String archivoNombre = teclado.nextLine();
+        switch(archivoNombre) {
+            case ("Puente"):
+                alturaCapa = 2;
+                totalCapas = 20;
+                System.out.println(alturaCapa);
+                System.out.println(totalCapas);
+                break;
+            case ("casa"):
+                alturaCapa = 4;
+                totalCapas = 40;
+                System.out.println(alturaCapa);
+                System.out.println(totalCapas);
+                break;
+            case ("pelota"):
+                alturaCapa = 6;
+                totalCapas = 1;
+                System.out.println(alturaCapa);
+                System.out.println(totalCapas);
+                break;
+        }
+        //tiempoEstimado =
         System.out.println("Solicitando impresion...");
         return archivoNombre;
     }
@@ -52,11 +80,17 @@ public class Persona {
     }
 
     public boolean setRol(String rol) {
-        if (rol.equals("docente") || rol.equals("estudiante")){
+        if (rol.equals("docente") ){
             this.rol = rol;
+            isDocente = true;
             return true;
-        } else {
-            System.out.println("Perfil invalido.");
+
+        } else if (rol.equals("estudiante")){
+            this.rol = rol;
+            isDocente = false;
+            return true;
+        }
+        else{
             return false;
         }
     }
