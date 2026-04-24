@@ -9,7 +9,8 @@ public class Persona {
     private String correo;
     private String rol;
     public boolean isDocente;
-    public static double tiempoEstimado;
+    public static float velocidadImpresion = 40;
+    public static float tiempoEstimado = 0;
     public static int alturaCapa, totalCapas;
 
 
@@ -28,23 +29,23 @@ public class Persona {
             case ("Puente"):
                 alturaCapa = 2;
                 totalCapas = 20;
-                System.out.println(alturaCapa);
-                System.out.println(totalCapas);
+                tiempoEstimado = (alturaCapa * totalCapas)/velocidadImpresion;
+                System.out.println("El tiempo estimado es de: " + tiempoEstimado + " horas");
                 break;
-            case ("casa"):
+            case ("Casa"):
                 alturaCapa = 4;
                 totalCapas = 40;
-                System.out.println(alturaCapa);
-                System.out.println(totalCapas);
+                tiempoEstimado = (alturaCapa * totalCapas)/velocidadImpresion;
+                System.out.println("El tiempo estimado es de: " + tiempoEstimado + " horas");
                 break;
-            case ("pelota"):
+            case ("Pelota"):
                 alturaCapa = 6;
                 totalCapas = 1;
-                System.out.println(alturaCapa);
-                System.out.println(totalCapas);
+                tiempoEstimado = (alturaCapa * totalCapas)/velocidadImpresion;
+                System.out.println("El tiempo estimado es de: " + tiempoEstimado + " horas");
                 break;
         }
-        //tiempoEstimado =
+
         System.out.println("Solicitando impresion...");
         return archivoNombre;
     }
